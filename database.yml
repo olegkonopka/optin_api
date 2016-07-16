@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: optin_db
+  pool: 2
+  username: oleg
+  password: oleg
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: optin_db_test
+  pool: 2
+  username: oleg
+  password: oleg
