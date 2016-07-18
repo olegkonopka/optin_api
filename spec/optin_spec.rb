@@ -10,19 +10,19 @@ describe OptIn do
 
   it "does be valid" do
     optin = build :opt_in
-    optin.save.should be true
+    expect(optin.save).to eq(true)
   end
 
   it "does not be valid" do
     optin = build :opt_in_two
-    optin.save.should_not be true
+    expect(optin.save).to_not eq(true)
   end
 
   it "does render error messages" do
     optin = build :opt_in_two
-    optin.save.should be false
+    expect(optin.save).to eq(false)
     %w(email mobile first_name last_name permission_type channel company_name).each do |key|
-      optin.errors[key].should be_present
+      expect(optin.errors[key]).to be_present
     end
   end
 
